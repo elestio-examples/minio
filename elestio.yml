@@ -26,6 +26,8 @@ environments:
     value: "root"
   - key: "ADMIN_PASSWORD"
     value: "random_password"
+  - key: "SOFTWARE_PASSWORD"
+    value: "random_password"
 config:
   runTime: "dockerCompose"
   version: ""
@@ -33,6 +35,8 @@ config:
   buildCommand: "docker-compose build"
   buildDir: "/"
   runCommand: "docker-compose up -d"
+  icon: "icon.png"
+  screenshot: "screenshot.png"
 lifeCycleConfig:
   preInstallCommand: "./scripts/preInstall.sh"
   postInstallCommand: "./scripts/postInstall.sh"
@@ -40,3 +44,8 @@ lifeCycleConfig:
   postBackupCommand: "./scripts/postBackup.sh"
   preRestoreCommand: "./scripts/preRestore.sh"
   postRestoreCommand: "./scripts/postRestore.sh"
+webUI:
+  - url: "https://[CI_CD_DOMAIN]"
+    label: "MinIO Console"
+    password: "[ADMIN_PASSWORD]"
+    username: "[ADMIN_LOGIN]" 
