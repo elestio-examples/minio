@@ -28,6 +28,8 @@ environments:
     value: "random_password"
   - key: "SOFTWARE_PASSWORD"
     value: "random_password"
+  - key: "DOMAIN"
+    value: "[CI_CD_DOMAIN]"    
 config:
   runTime: "dockerCompose"
   version: ""
