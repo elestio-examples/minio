@@ -1,7 +1,7 @@
-version: '3'
+version: "3"
 services:
   minio:
-    image: minio/minio:${SOFTWARE_VERSION_TAG}
+    image: elestio/minio:${SOFTWARE_VERSION_TAG}
     restart: always
     dns:
       - 8.8.8.8
@@ -14,5 +14,5 @@ services:
       MINIO_ROOT_USER: ${ADMIN_LOGIN}
       MINIO_ROOT_PASSWORD: ${ADMIN_PASSWORD}
       MINIO_BROWSER_REDIRECT_URL: https://${DOMAIN}
-      MINIO_SERVER_URL: https://${DOMAIN}:34256 
+      MINIO_SERVER_URL: https://${DOMAIN}:34256
     command: server --address ":9000" --console-address ":9001" /data
